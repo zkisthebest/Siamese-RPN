@@ -101,7 +101,7 @@ def show_output(root_dir, model, pth_file, video_dir, use_gpu):
     RESET = True
     count = 0
     
-    for index in range(len(os.listdir(root_dir+'/img/'))):
+    for index in range(1, len(os.listdir(root_dir+'/img/'))):
 #    for index in range(0, 30):
 #        print(index)
             
@@ -111,10 +111,10 @@ def show_output(root_dir, model, pth_file, video_dir, use_gpu):
         gtbox = [float(i) for i in gtbox]
         gtbox = x1y1wh_to_xywh(gtbox)
 ##        gtbox = x1y1x2y2_to_xywh(gtbox)
-        """用ground truth作为last_box："""
-        if RESET:
-            last_box = gtbox
-        """"""
+#        """用ground truth作为last_box："""
+#        if RESET:
+#            last_box = gtbox
+#        """"""
 #        """更新template："""
 #        template = os.listdir(root_dir+'/img/')[index]
 #        template = Image.open(root_dir +'/img/'+ template)
@@ -175,7 +175,7 @@ def show_output(root_dir, model, pth_file, video_dir, use_gpu):
         loc1 = np.where(coutput1 == np.max(coutput1)) 
 #        loc1 = np.where(coutput1 > 0.1)
         img = cv2.imread(root_dir+'/img/'+os.listdir(root_dir+'/img/')[index])
-        "用last_box作为中心，对img处理成255*255："
+#        "用last_box作为中心，对img处理成255*255："
 #        img = Image.fromarray(cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
 #        img = transform2(img, last_box, 2, 255)
 #        img = cv2.cvtColor(np.asarray(img),cv2.COLOR_RGB2BGR)
@@ -198,9 +198,9 @@ def show_output(root_dir, model, pth_file, video_dir, use_gpu):
             
 #            total[','.join([str(i) for i in list1])] = sum(list1) - sum(gtbox)
 
-#            "把pro传给last_box，下一帧的detection进行图像预处理时将以last_box作为中心。"
-#            last_box = pro
-#            last_box = list(map(lambda x:int(round(x)), last_box))
+            "把pro传给last_box，下一帧的detection进行图像预处理时将以last_box作为中心。"
+            last_box = pro
+            last_box = list(map(lambda x:int(round(x)), last_box))
 
 #        list1 = list(total.keys())[list(total.values()).index(min(total.values()))].split(',')
 #        list1 = [int(i) for i in list1]
