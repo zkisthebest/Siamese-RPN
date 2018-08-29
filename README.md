@@ -1,4 +1,4 @@
-# Siamese-RPN
+# Siamese-RPN   PyTorch implementation
 
 This is my implementation for Siamese Region Proposal Network with PyTorch.
 
