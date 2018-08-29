@@ -8,7 +8,7 @@ Python version: 3.6 (3.5 or 3.4 may be also okay even though I did not try)
 Pytorch version: 0.4.0 or higher
 
 
-NOET:
+NOTE:
 This project is not the final version. I will add some useful comments in the near future.
 You can click "Watch","Star", or "Fork" if you feel helpful with my work, thanks to your support!
 
