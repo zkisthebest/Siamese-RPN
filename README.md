@@ -9,7 +9,7 @@ Pytorch version: 0.4.0 or higher
 
 
 NOTE:
-This project is not the final version. I will add some useful comments in the near future.
+This project has been polishing. I will add some useful comments in the near future.
 You can click "Watch","Star", or "Fork" if you feel helpful with my work, thanks to your support!
 
 
